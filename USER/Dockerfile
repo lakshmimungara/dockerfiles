@@ -29,6 +29,7 @@ RUN useradd expense
 USER expense 
 CMD ["sleep", "100"]
 
+
 # docker build -t user:v1 . 
 # docker run -d user:v1 
 # docker exec -it <container-id> bash
@@ -42,3 +43,4 @@ CMD ["sleep", "100"]
 # CMD ["sleep", "100"]
 
 # -> Here, 4th line doesn't work becoz, one user doesn't have permissions or access to add another user
+
