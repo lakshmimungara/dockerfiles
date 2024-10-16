@@ -12,11 +12,11 @@
 
 # -> ARG runs at the time of build 
 
-FROM almalinux:9 
-ENV course="Devops with AWS" \
-	duration="2hrs"
-RUN echo "course: $course, duration: $duration"
-CMD ["sleep", "100"]
+# FROM almalinux:9 
+# ENV course="Devops with AWS" \
+# 	duration="2hrs"
+# RUN echo "course: $course, duration: $duration"
+# CMD ["sleep", "100"]
 
 
 # ARG vs ENV --> most interview question 
@@ -33,11 +33,11 @@ CMD ["sleep", "100"]
 # ENV var-name=$var-name
 
 
-# FROM almalinux:9 
-# ARG course="Devops" \
-# 	duration="2hrs"
-# RUN echo "course: $course, duration: $duration"
-# CMD ["sleep", "100"]
+FROM almalinux:9 
+ARG course="Devops" \
+	duration="2hrs"
+RUN echo "course: $course, duration: $duration"
+CMD ["sleep", "100"]
 
 # -> we can override the values from outside 
 # -> docker build -t arg:v1 --build-arg course=docker .
