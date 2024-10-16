@@ -64,7 +64,7 @@ fi
 
 # Step 6: Add the current user to the docker group (optional)
 echo -e "${Y}Adding the current user to the docker group to avoid using sudo...${N}"
-usermod -aG docker ec2-user
+sudo usermod -aG docker ec2-user
 
 # Finally
 echo -e "${G}Docker is installed and running.${N}"
