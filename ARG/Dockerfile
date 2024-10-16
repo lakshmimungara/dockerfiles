@@ -62,22 +62,22 @@
 # -> default version
 # -> docker build -t arg:v1 --build-arg course=docker .
 
-ARG version
-FROM almalinux:${version:-9} 
-ARG course="Devops" \
-	duration="2hrs"
-RUN echo "course: $course, duration: $duration , version: $version"
-CMD ["sleep", "100"]
-
-# -> docker build -t arg:v1 --build-arg course=docker .
-
 # ARG version
 # FROM almalinux:${version:-9} 
 # ARG course="Devops" \
 # 	duration="2hrs"
-# ENV duration=$duration
-# RUN echo "course: $course, duration: $duration"
+# RUN echo "course: $course, duration: $duration , version: $version"
 # CMD ["sleep", "100"]
+
+# -> docker build -t arg:v1 --build-arg course=docker .
+
+ARG version
+FROM almalinux:${version:-9} 
+ARG course="Devops" \
+	duration="2hrs"
+ENV duration=$duration
+RUN echo "course: $course, duration: $duration"
+CMD ["sleep", "100"]
 
 # -> docker build -t arg:v1 --build-arg course=docker .
 # -> docker run -d arg:v1 
