@@ -33,22 +33,22 @@
 # ENV var-name=$var-name
 
 
-FROM almalinux:9 
-ARG course="Devops" \
-	duration="2hrs"
-RUN echo "course: $course, duration: $duration"
-CMD ["sleep", "100"]
+# FROM almalinux:9 
+# ARG course="Devops" \
+# 	duration="2hrs"
+# RUN echo "course: $course, duration: $duration"
+# CMD ["sleep", "100"]
 
 # -> we can override the values from outside 
 # -> docker build -t arg:v1 --build-arg course=docker .
 
 
-# ARG version
-# FROM almalinux:${version} 
-# ARG course="Devops" \
-# 	duration="2hrs"
-# RUN echo "course: $course, duration: $duration"
-# CMD ["sleep", "100"]
+ARG version
+FROM almalinux:${version} 
+ARG course="Devops" \
+	duration="2hrs"
+RUN echo "course: $course, duration: $duration"
+CMD ["sleep", "100"]
 
 # -> docker build -t arg:v1 --build-arg course=docker --build-arg version=8 .
 
