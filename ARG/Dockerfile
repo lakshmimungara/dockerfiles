@@ -1,10 +1,10 @@
 # -> It is used to set the variables at build time only, not inside the container  
 
-# FROM almalinux:9 
-# ARG course="Devops with AWS" \
-# 	duration="2hrs"
-# RUN echo "course: $course, duration: $duration"
-# CMD ["sleep", "100"]
+FROM almalinux:9 
+ARG course="Devops with AWS" \
+	duration="2hrs"
+RUN echo "course: $course, duration: $duration"
+CMD ["sleep", "100"]
 
 # docker build -t arg:v1 .
 # docker run -d arg:v1 
@@ -12,11 +12,11 @@
 
 # -> ARG runs at the time of build 
 
-FROM almalinux:9 
-ENV course="Devops with AWS" \
-	duration="2hrs"
-RUN echo "course: $course, duration: $duration"
-CMD ["sleep", "100"]
+# FROM almalinux:9 
+# ENV course="Devops with AWS" \
+# 	duration="2hrs"
+# RUN echo "course: $course, duration: $duration"
+# CMD ["sleep", "100"]
 
 
 # ARG vs ENV --> most interview question 
