@@ -1,5 +1,6 @@
 #!/bin/bash
 
+USERID=$(id -u)
 # Ensure the script is run as root or using superuser
 if [ "$USERID" -ne 0 ]; then
   echo "Please run with root user priviledges or use sudo"
