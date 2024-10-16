@@ -50,7 +50,7 @@ fi
 
 # Step 6: Post-installation (optional)
 # Add the current user to the docker group to run Docker without superuser
-usermod -aG docker $USER
+sudo usermod -aG docker $USER
 
 # Finally
 echo -e "$G Docker is installed and running. $N"
